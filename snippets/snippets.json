@@ -1,0 +1,16 @@
+{
+    "Import Frame": {
+        "prefix": "iff",
+        "body": [
+            "import { Frame } from 'framer'"
+        ],
+        "description": ""
+    },
+    "Import Property Controls": {
+        "prefix": "ipf",
+        "body": [
+            "import { PropertyControls, ControlType } from 'framer'"
+        ],
+        "description": ""
+    }
+}
