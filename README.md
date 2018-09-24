@@ -1,4 +1,4 @@
-# Framer X Snippets for VS Code
+# Framer X Code Snippets for VS Code
 
 ## Installation
 
@@ -10,6 +10,6 @@
 
 All available snippets and the triggers. The **⇥** means the `TAB` key.
 
-| Prefix   | Method |
-| -------: | ------- |
-| `iff→`   | "import { Frame } from 'framer'" |
+| Prefix | Method                           |
+| -----: | -------------------------------- |
+|  `xif` | "import { Frame } from 'framer'" |

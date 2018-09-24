@@ -1,42 +1,42 @@
 {
-  "name": "vscode-framerx-react-snippets",
-  "displayName": "Framer X React Snippets",
-  "description": "VS Code Extension for React, versions on plain ES6 & TypeScript",
-  "version": "0.0.3",
-  "publisher": "davo",
-  "icon": "images/logo.png",
-  "keywords": [
-    "snippets",
-    "framer-x",
-    "framer",
-    "react",
-    "javascript",
-    "typescript"
-  ],
-  "engines": {
-    "vscode": "^1.13.0"
-  },
-  "license": "SEE LICENSE",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/davo/vscode-framerx-snippets/"
-  },
-  "categories": [
-    "Snippets"
-  ],
-  "contributes": {
-    "snippets": [{
-        "language": "javascript",
-        "path": "./snippets/snippets.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/snippets.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/snippets.json"
-      }
-    ]
-  }
+	"name": "vscode-framerx-code-snippets",
+	"displayName": "Framer X Code Snippets",
+	"description": "VS Code Extension for Framer Code Snippets. Code snippates for React with versions on plain ES6 & TypeScript",
+	"version": "0.0.41",
+	"publisher": "pixelbeat",
+	"icon": "images/framer-x-snippets.png",
+	"keywords": [
+		"snippets",
+		"framer-x",
+		"react",
+		"javascript",
+		"typescript"
+	],
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"license": "SEE LICENSE",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/davo/vscode-framerx-code-snippets/"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	}
 }

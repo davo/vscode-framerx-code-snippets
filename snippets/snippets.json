@@ -42,14 +42,14 @@
         "description": "Export default function in ES7 syntax"
     },
     "Import Frame": {
-        "prefix": "iff",
+        "prefix": "xif",
         "body": [
             "import { Frame } from 'framer'"
         ],
         "description": ""
     },
     "Import Property Controls": {
-        "prefix": "ipf",
+        "prefix": "xipc",
         "body": [
             "import { PropertyControls, ControlType } from 'framer'"
         ],
