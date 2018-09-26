@@ -67,6 +67,20 @@
         ],
         "description": ""
     },
+    "Add Property Control Enum": {
+        "prefix": "xapce",
+        "body": [
+            "static propertyControls: PropertyControls = {",
+            "   $0: {",
+            "   type: ControlType.Enum,",
+            "   title: '$1'",
+            "   options: [$2, $3]",
+            "   optionTitles: [$4, $5]",
+            "   }, ",
+            "}"
+        ],
+        "description": ""
+    },
     "Framer X Code Component": {
         "prefix": "xcc",
         "body": [
