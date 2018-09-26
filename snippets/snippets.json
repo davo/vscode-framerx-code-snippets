@@ -96,6 +96,13 @@
             "   color: '#8855FF',",
             "   background: 'rgba(136, 85, 255, 0.1)',",
             "   overflow: 'hidden'",
+            "}",
+            "",
+            "interface Props {",
+            "   text: string",
+            "}",
+            "export class $0:ComponentName extends React.Component<Props> {",
+
             "}"
         ],
         "description": ""
