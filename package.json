@@ -2,7 +2,7 @@
 	"name": "vscode-framerx-code-snippets",
 	"displayName": "Framer X Code Snippets",
 	"description": "VS Code Extension for Framer Code Snippets. Code snippates for React with versions on plain ES6 & TypeScript",
-	"version": "0.0.46",
+	"version": "0.0.47",
 	"publisher": "pixelbeat",
 	"icon": "images/framer-x-snippets.png",
 	"keywords": [
