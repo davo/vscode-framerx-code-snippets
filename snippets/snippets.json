@@ -101,8 +101,12 @@
             "interface Props {",
             "   text: string",
             "}",
-            "export class $0:ComponentName extends React.Component<Props> {",
-
+            "export class $0 extends React.Component<Props> {",
+            "",
+            "   render() {",
+            "       return (",
+            "           <div>$1</div>",
+            "       )",
             "}"
         ],
         "description": ""
