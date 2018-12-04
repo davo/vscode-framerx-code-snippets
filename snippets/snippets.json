@@ -55,31 +55,47 @@
         ],
         "description": ""
     },
-    "Add Property Control String": {
-        "prefix": "xapcs",
+    "Property Controls": {
+        "prefix": "xpc",
         "body": [
             "static propertyControls: PropertyControls = {",
-            "   $0: {",
-            "   type: ControlType.String,",
-            "   title: '$1'",
-            "   }, ",
+            "   $0",
             "}"
         ],
         "description": ""
     },
-    "Add Property Control Enum": {
-        "prefix": "xapce",
+    "Property Control Type String": {
+        "prefix": "xpcs",
         "body": [
-            "static propertyControls: PropertyControls = {",
+            "   $0: {",
+            "   type: ControlType.String,",
+            "   title: '$1'",
+            "   }, "
+        ],
+        "description": ""
+    },
+    "Property Control Type Enum": {
+        "prefix": "xpce",
+        "body": [
             "   $0: {",
             "   type: ControlType.Enum,",
             "   title: '$1'",
             "   options: [$2, $3]",
             "   optionTitles: [$4, $5]",
-            "   }, ",
-            "}"
+            "   }, "
         ],
         "description": ""
+    },
+    "Property Control Type Number": {
+        "prefix": "xctn",
+        "body": [
+            "   $0: {",
+            "       type: ControlType.Number,",
+            "       title: '$1',",
+            "       min: $2",
+            "       max: $3",
+            "   }, "
+        ]
     },
     "Framer X Code Component": {
         "prefix": "xcc",
