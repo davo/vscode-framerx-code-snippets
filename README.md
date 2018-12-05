@@ -6,7 +6,7 @@ Here is a adirect link to the extension at the VS Code Marketplace [Framer X Cod
 
 ## Installation
 
-In the command palette (cmd-shift-p), select Install Extension and choose npm Framer X Code Snippets for VS Code.
+In the command palette (``cmd-shift-p``), select ``Install Extension`` and choose ``Framer X Code Snippets for VS Code``.
 
 ## Supported languages (file extensions)
 
