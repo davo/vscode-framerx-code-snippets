@@ -11,41 +11,35 @@ Here is direct link to the extention at the VS Code Marketplace [Framer X Code S
 - JavaScript React (.jsx)
 - JavaScript (.js)
 
-## Snippets list
-
-<details>
-<summary><b>Expand snippets list</b></summary>
-
+## Snippet list
 
 #### Framer X Snippets:
 
-  * [x] Framer X Default Code Component
-  * [x] Import Frame component
+- [x] Framer X Default Code Component
+- [x] Import Frame component
 
 #### Framer X Property Controls:
 
-  * [x] Property Control Static Method
-  * [x] Control Type Boolean
-  * [x] Control Type Number
-  * [x] Control Type String
-  * [x] Control Type Color
-  * [x] Control Type Image
-  * [x] Control Type File
-  * [x] Control Type Enum
-  * [x] Control Type SegmentedEnum
-  * [x] Control Type FusedNumber
-  * [x] Hide Control Types Pattern
-
+- [x] Property Control Static Method
+- [x] Control Type Boolean
+- [x] Control Type Number
+- [x] Control Type String
+- [x] Control Type Color
+- [x] Control Type Image
+- [x] Control Type File
+- [x] Control Type Enum
+- [x] Control Type SegmentedEnum
+- [x] Control Type FusedNumber
+- [x] Hide Control Types Pattern
 
 #### Framer X Code Overrides:
 
-  * [ ] Events Overrides
-  * [ ] Animation Overrides
+- [ ] Events Overrides
+- [ ] Animation Overrides
+
+Something wrong/missing? Please [open a new issue](https://github.com/davo/vscode-framerx-code-snippets/issues/new) and tell me more about it! 🙌🏻    
 
 ---
-
-
-</details>
 
 # Methods
 
