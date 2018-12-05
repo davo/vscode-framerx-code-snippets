@@ -2,18 +2,18 @@
 	"name": "vscode-framerx-code-snippets",
 	"displayName": "Framer X Code Snippets",
 	"description": "A collection of snippets for Framer X using React with versions on plain ES6 & TypeScript.",
-	"version": "0.0.51",
+	"version": "0.0.55",
 	"publisher": "pixelbeat",
 	"icon": "images/framer-x-snippets.png",
 	"keywords": [
-		"snippets",
 		"framer-x",
 		"react",
 		"javascript",
-		"typescript"
+		"typescript",
+		"snippets"
 	],
 	"engines": {
-		"vscode": "^1.0.0"
+		"vscode": "^1.13.0"
 	},
 	"license": "SEE LICENSE",
 	"repository": {

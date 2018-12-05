@@ -65,37 +65,111 @@
         "description": ""
     },
     "Property Control Type String": {
-        "prefix": "xpcs",
+        "prefix": "xpcts",
         "body": [
-            "   $0: {",
+            "$0: {",
             "   type: ControlType.String,",
             "   title: '$1'",
+            "   placeholder: '$2'",
             "   }, "
+        ],
+        "description": "String controls are displayed using a single line input field. A placeholder value can be set when needed."
+    },
+    "Property Control Type Color": {
+        "prefix": "xpctc",
+        "body": [
+            "$0: {",
+            "   type: ControlType.Color",
+            "}, "
+        ],
+        "description": "Color controls are displayed using a color picker popover and a number input for the alpha."
+    },
+    "Property Control Type Image": {
+        "prefix": "xpcti",
+        "body": [
+            "$0: {",
+            "   type: ControlType.Image",
+            "   title: 'Image'",
+            "}, "
+        ],
+        "description": "Image controls are displayed using an image picker that shows a small preview. The component receives an absolute URL during rendering."
+    },
+    "Property Control Type Number": {
+        "prefix": "xpctn",
+        "body": [
+            "$0: {",
+            "   type: ControlType.Number,",
+            "   title: '$1',",
+            "   min: $2,",
+            "   max: $3",
+            "   step: $4",
+            "   unit: $5",
+            "   displayStepper: false",
+            "}, "
+        ],
+        "description": "Number controls are displayed using an input field and a slider. The min and max values can be specified to constraint the output. The default step size is 1. When a step size smaller then 1 is entered, the output will be floats. When the unit type is set to %, the input field will display 10 as 10%."
+    },
+    "Property Control Type Fused Number": {
+        "prefix": "xpctfn",
+        "body": [
+            "$0: {",
+            "   type: ControlType.FusedNumber,",
+            "   title: '$1',",
+            "   toggleKey: '$2',",
+            "   toggleTitles: ['All Options', 'Each Option'],",
+            "   valueKeys: ['Top', 'Right', 'Bottom', 'Left']",
+            "   valueLabels: ['T', 'R', 'B', 'L'],",
+            "   min: $3,",
+            "}, "
         ],
         "description": ""
     },
-    "Property Control Type Enum": {
-        "prefix": "xpce",
+    "Property Control Type Boolean": {
+        "prefix": "xpctb",
         "body": [
-            "   $0: {",
+            "$0: {",
+            "   type: ControlType.Boolean,",
+            "   title: '$1',",
+            "   enabledTitle: '$2'",
+            "   disabledTitle: '$3'",
+            "}, "
+        ],
+        "description": "Booleans use a segmented control. The segment titles are True and False by default but these can be overridden using the enabledTitle and disabledTitle."
+    },
+    "Property Control Type Segmented Enum": {
+        "prefix": "xpctse",
+        "body": [
+            "$0: {",
+            "   type: ControlType.SegmentedEnum,",
+            "   title: '$1'",
+            "   options: [$2, $3]",
+            "   optionTitles: [$4, $5]",
+            "}, "
+        ],
+        "description": "A segmented enum control is displayed using a segmented control. Since a segmented control has limited space this only works for a tiny set of string values."
+    },
+    "Property Control Type Enum": {
+        "prefix": "xpcte",
+        "body": [
+            "$0: {",
             "   type: ControlType.Enum,",
             "   title: '$1'",
             "   options: [$2, $3]",
             "   optionTitles: [$4, $5]",
-            "   }, "
+            "}, "
         ],
-        "description": ""
+        "description": "An enum control displays a pop-up button with a fixed set of string values. The optionTitles can be set to have nicely formatted values for in the UI."
     },
-    "Property Control Type Number": {
-        "prefix": "xctn",
+    "Property Control Type File": {
+        "prefix": "xpctf",
         "body": [
-            "   $0: {",
-            "       type: ControlType.Number,",
-            "       title: '$1',",
-            "       min: $2",
-            "       max: $3",
-            "   }, "
-        ]
+            "$0: {",
+            "   type: ControlType.File,",
+            "   title: '$1'",
+            "   allowedFileTypes: ['$2', '$3'],",
+            "}, "
+        ],
+        "description": "File controls are displayed using a file picker that shows the file name after selecting a file. The component receives an absolute URL during rendering. The allowedFileTypes is an array containing all allowed file types, like so: ['json', 'obj', 'collada']."
     },
     "Framer X Code Component": {
         "prefix": "xcc",
@@ -103,21 +177,12 @@
             "import * as React from 'react'",
             "import { PropertyControls, ControlType } from 'framer'",
             "",
-            "const style: React.CSSProperties = {",
-            "   height: '100%',",
-            "   display: 'flex',",
-            "   alignItems: 'center',",
-            "   justifyContent: 'center',",
-            "   textAlign: 'center',",
-            "   color: '#8855FF',",
-            "   background: 'rgba(136, 85, 255, 0.1)',",
-            "   overflow: 'hidden'",
-            "}",
+            "const style:React.CSSProperties={height:'100%',display:'flex',alignItems:'center',justifyContent:'center',textAlign:'center',color:'#8855FF',background:'rgba(136, 85, 255, 0.1)',overflow:'hidden',}",
             "",
             "interface Props {",
             "   text: string",
             "}",
-            "export class $0 extends React.Component<Props> {",
+            "export class ${0:ClassName} extends React.Component<Props> {",
             "",
             "   render() {",
             "       return (",
@@ -125,6 +190,59 @@
             "       )",
             "}"
         ],
+        "description": "This is the default React Code component created by Framer X. In Framer X, code components make use of JSX, an HTML-like markup language. Below you’ll find a very basic example of a React component. Notice how the render() method returns something very close to plain HTML and CSS."
+    },
+    "Conditional Control Types": {
+        "prefix": "xcpct",
+        "body": [
+            "import * as React from 'react'",
+            "import { PropertyControls, ControlType } from 'framer'",
+            "",
+            "const style:React.CSSProperties={height:'50%',display:'flex',alignItems:'center',justifyContent:'flex-start',textAlign:'center',paddingLeft:24,fontFamily:'-apple-system, BlinkMacSystemFont',fontStyle:'normal',fontWeight:300,fontSize:'1.5rem',color:'#000000',background:'rgba(136, 85, 255, 0.1)',borderBottom:'1px solid #8855FF',overflow:'hidden'}",
+            "",
+            "interface Props {",
+            "   isEnabled: boolean",
+            "   isActive: boolean",
+            "}",
+            "export class ${0:ClassName} extends React.Component<Props> {",
+            "   static defaultProps: Props = {",
+            "        isEnabled: false,",
+            "        isActive: false",
+            "   }",
+            "   static propertyControls: PropertyControls = {",
+            "        isEnabled: { type: ControlType.Boolean },",
+            "        isActive: {",
+            "           type: ControlType.Boolean,",
+            "           hidden(props) {",
+            "                return props.isEnabled === false",
+            "           }",
+            "        }",
+            "   }",
+            "",
+            "   render() {",
+            "        let { isEnabled, isActive } = this.props",
+            "",
+            "        return (",
+            "           <>",
+            "                <div style={style}>{`Is enabled? ${isEnabled}`}</div>",
+            "                <div style={style}>{`Is active? ${isActive}`}</div>",
+            "           </>",
+            "        )",
+            "   }",
+            "}"
+        ],
         "description": ""
+    },
+    "Typescript Props & States Interfaces": {
+        "prefix": "xps",
+        "body": [
+            "interface Props {",
+            "   $0: $1",
+            "}",
+            "",
+            "interface State {",
+            "   $2: $3",
+            "}"
+        ]
     }
 }
