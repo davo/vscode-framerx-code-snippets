@@ -63,8 +63,8 @@
       "${0:string}: {",
       "  type: ControlType.String,",
       "  defaultValue: '${1:Default Value}',",
-      "  title: '$2:String',",
-      "  placeholder: '$3:Insert string value'",
+      "  title: '{$2:String}',",
+      "  placeholder: '{$3:Insert string value}'",
       "}, "
     ],
     "description": "String controls are displayed using a single line input field. A placeholder value can be set when needed."
