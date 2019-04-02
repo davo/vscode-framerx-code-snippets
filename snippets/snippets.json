@@ -220,39 +220,39 @@
     "description": "Property control types can be hidden by implementing the hidden function on the property description."
   },
   "import": {
-    "prefix": "imp",
+    "prefix": "ximp",
     "body": "import ${2:moduleName} from '${1:module}'$0"
   },
   "importNoModuleName": {
-    "prefix": "imn",
+    "prefix": "ximn",
     "body": "import '${1:module}'$0"
   },
   "importDestructing": {
-    "prefix": "imd",
+    "prefix": "ximd",
     "body": "import { $2 } from '${1:module}'$0"
   },
   "importEverything": {
-    "prefix": "ime",
+    "prefix": "xime",
     "body": "import * as ${2:alias} from '${1:module}'$0"
   },
   "importAs": {
-    "prefix": "ima",
+    "prefix": "xima",
     "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
   },
   "exportDefault": {
-    "prefix": "exp",
+    "prefix": "xexp",
     "body": "export default $1$0"
   },
   "exportDestructing": {
-    "prefix": "exd",
+    "prefix": "xexd",
     "body": "export { $2 } from '${1:module}'$0"
   },
   "exportAs": {
-    "prefix": "exa",
+    "prefix": "xexa",
     "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
   },
   "exportNamedFunction": {
-    "prefix": "enf",
+    "prefix": "xenf",
     "body": [
       "export const ${1:functionName} = (${2:params}) => {",
       "  $0",
@@ -262,11 +262,11 @@
     "description": "Export named function in ES7 syntax"
   },
   "exportDefaultFunction": {
-    "prefix": "edf",
+    "prefix": "xedf",
     "body": ["export default (${1:params}) => {", "  $0", "}", ""],
     "description": "Export default function in ES7 syntax"
   },
-  "Typescript Props & States Interfaces": {
+  "TSPropsStatesInterfaces": {
     "prefix": "xps",
     "body": [
       "interface Props {",
@@ -277,6 +277,39 @@
       "  $2: $3",
       "}"
     ]
+  },
+  "useIdentifier": {
+    "prefix": "xui",
+    "body": [
+      "function useIdentifier() {",
+      "  return useStaticValue(uuidv4)",
+      "}",
+      "",
+      "function uuidv4() {",
+      "  return \"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx\".replace(/[xy]/g, function(c) {",
+      "    var r = (Math.random() * 16) | 0,",
+      "      v = c == \"x\" ? r : (r & 0x3) | 0x8;",
+      "    return v.toString(16);",
+      "  });",
+      "}"
+    ],
+    "description": "Hook to return an unique identifier by Jonas Treub."
+  },
+  "useStaticValue": {
+    "prefix": "xusv",
+    "body": [
+      "export function useStaticValue<T = any>(${0:generateValue}: () => T): T {",
+      "  const ref = useRef<T>(null);",
+      "",
+      "  if (!ref.current) {",
+      "    ref.current = ${1:generateValue}();",
+      "  }",
+      "",
+      "  return ref.current;",
+      "}"
+
+    ],
+    "description": "Hook to return a static value by Jonas Treub."
   },
   "useState": {
     "prefix": "xus",
@@ -349,7 +382,7 @@
     ]
   },
   "useRef": {
-    "prefix": "xur",
+    "prefix": "xuref",
     "body": ["const ${1:ref} = useRef(${2:initialValue})"],
     "description": "useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component."
   },
@@ -386,4 +419,13 @@
     "body": ["useDebugValue(${1:value})"],
     "description": "Can be used to display a label for custom hooks in React DevTools."
   },
+  "Random Color": {
+    "prefix": "xrc",
+    "body": [
+      "function randomColor() {",
+      "    return '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);",
+      "}"
+    ],
+    "description": "Random color function by Emil Widlund"
+  }
 }

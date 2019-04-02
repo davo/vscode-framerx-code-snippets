@@ -96,24 +96,37 @@ The **⇥** means the `TAB →` key.
 
 ## React
 
-| Prefix | Method                                |
-| -----: | ------------------------------------- |
-| `xi ⇥` | "import { ModuleName } from 'module'" |
+|   Prefix | Method                                |
+| -------: | ------------------------------------- |
+| `ximp ⇥` | "import { ModuleName } from 'module'" |
 
-### Hooks
+### React Hooks
 
-|   Prefix | Method                   |
-| -------: | ------------------------ |
-|  `xus ⇥` | useState Hook            |
-|  `xue ⇥` | useEffect Hook           |
-|  `xuc ⇥` | useContext Hook          |
-|  `xur ⇥` | useReducer Hook          |
-| `xucb ⇥` | useCallback Hook         |
-|  `xum ⇥` | useMemo Hook             |
-|  `xur ⇥` | useRef Hook              |
-| `xuih ⇥` | useImperativeHandle Hook |
-| `xule ⇥` | useLayoutEffect Hook     |
-| `xudv ⇥` | useDebugValue Hook       |
+|    Prefix | Method                   |
+| --------: | ------------------------ |
+|   `xus ⇥` | useState Hook            |
+|   `xue ⇥` | useEffect Hook           |
+|   `xuc ⇥` | useContext Hook          |
+|   `xur ⇥` | useReducer Hook          |
+|  `xucb ⇥` | useCallback Hook         |
+|   `xum ⇥` | useMemo Hook             |
+| `xuref ⇥` | useRef Hook              |
+|  `xuih ⇥` | useImperativeHandle Hook |
+|  `xule ⇥` | useLayoutEffect Hook     |
+|  `xudv ⇥` | useDebugValue Hook       |
+
+### React Custom Hooks
+
+|   Prefix | Method              |
+| -------: | ------------------- |
+|  `xui ⇥` | useIdentifier Hook  |
+| `xusv ⇥` | useStaticValue Hook |
+
+## Utility Functions
+
+|  Prefix | Method                         |
+| ------: | ------------------------------ |
+| `xrc ⇥` | "function randomColor() {...}" |
 
 ## Tips & Tricks
 
