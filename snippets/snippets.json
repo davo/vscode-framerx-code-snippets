@@ -46,14 +46,25 @@
     "body": ["static propertyControls: PropertyControls = {", "  $0", "}"],
     "description": ""
   },
+  "Property Control Type Array": {
+    "prefix": "xcta",
+    "body": [
+      "${0:children}: {",
+      "  type: ControlType.Array,",
+      "  propertyControl: {type: },",
+      "  title: ${2:'Children'}",
+      "}, "
+    ],
+    "description": "Array controls allows multiple values per ControlType, provided as an array via properties."
+  },
   "Property Control Type String": {
     "prefix": "xcts",
     "body": [
       "${0:string}: {",
       "  type: ControlType.String,",
-      "  defaultValue: '${1: Default Value}',",
-      "  title: '$2',",
-      "  placeholder: '$3'",
+      "  defaultValue: '${1:Default Value}',",
+      "  title: '{$2:String}',",
+      "  placeholder: '{$3:Insert string value}'",
       "}, "
     ],
     "description": "String controls are displayed using a single line input field. A placeholder value can be set when needed."
@@ -61,21 +72,31 @@
   "Property Control Type Color": {
     "prefix": "xctc",
     "body": [
-        "${0:color}: {",
-        "  type: ControlType.Color,",
-        "  title: 'Color'",
-        "}, "
-     ],
+      "${0:color}: {",
+      "  type: ControlType.Color,",
+      "  title: '${1:Color}'",
+      "}, "
+    ],
     "description": "Color controls are displayed using a color picker popover and a number input for the alpha."
+  },
+  "Property Control Type ComponentInstance": {
+    "prefix": "xctci",
+    "body": [
+      "${0:children}: {",
+      "  type: ControlType.ComponentInstance,",
+      "  title: '${1:Children}'",
+      "}, "
+    ],
+    "description": "ComponentInstance controls references to another components on the canvas, provided via a property."
   },
   "Property Control Type Image": {
     "prefix": "xcti",
     "body": [
-        "${0:image}: {",
-        "  type: ControlType.Image,",
-        "  title: 'Image'",
-        "}, "
-     ],
+      "${0:image}: {",
+      "  type: ControlType.Image,",
+      "  title: '${1:Image}'",
+      "}, "
+    ],
     "description": "Image controls are displayed using an image picker that shows a small preview. The component receives an absolute URL during rendering."
   },
   "Property Control Type Number": {
@@ -199,39 +220,39 @@
     "description": "Property control types can be hidden by implementing the hidden function on the property description."
   },
   "import": {
-    "prefix": "imp",
+    "prefix": "ximp",
     "body": "import ${2:moduleName} from '${1:module}'$0"
   },
   "importNoModuleName": {
-    "prefix": "imn",
+    "prefix": "ximn",
     "body": "import '${1:module}'$0"
   },
   "importDestructing": {
-    "prefix": "imd",
+    "prefix": "ximd",
     "body": "import { $2 } from '${1:module}'$0"
   },
   "importEverything": {
-    "prefix": "ime",
+    "prefix": "xime",
     "body": "import * as ${2:alias} from '${1:module}'$0"
   },
   "importAs": {
-    "prefix": "ima",
+    "prefix": "xima",
     "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
   },
   "exportDefault": {
-    "prefix": "exp",
+    "prefix": "xexp",
     "body": "export default $1$0"
   },
   "exportDestructing": {
-    "prefix": "exd",
+    "prefix": "xexd",
     "body": "export { $2 } from '${1:module}'$0"
   },
   "exportAs": {
-    "prefix": "exa",
+    "prefix": "xexa",
     "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
   },
   "exportNamedFunction": {
-    "prefix": "enf",
+    "prefix": "xenf",
     "body": [
       "export const ${1:functionName} = (${2:params}) => {",
       "  $0",
@@ -241,11 +262,11 @@
     "description": "Export named function in ES7 syntax"
   },
   "exportDefaultFunction": {
-    "prefix": "edf",
+    "prefix": "xedf",
     "body": ["export default (${1:params}) => {", "  $0", "}", ""],
     "description": "Export default function in ES7 syntax"
   },
-  "Typescript Props & States Interfaces": {
+  "TSPropsStatesInterfaces": {
     "prefix": "xps",
     "body": [
       "interface Props {",
@@ -256,5 +277,155 @@
       "  $2: $3",
       "}"
     ]
+  },
+  "useIdentifier": {
+    "prefix": "xui",
+    "body": [
+      "function useIdentifier() {",
+      "  return useStaticValue(uuidv4)",
+      "}",
+      "",
+      "function uuidv4() {",
+      "  return \"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx\".replace(/[xy]/g, function(c) {",
+      "    var r = (Math.random() * 16) | 0,",
+      "      v = c == \"x\" ? r : (r & 0x3) | 0x8;",
+      "    return v.toString(16);",
+      "  });",
+      "}"
+    ],
+    "description": "Hook to return an unique identifier by Jonas Treub."
+  },
+  "useStaticValue": {
+    "prefix": "xusv",
+    "body": [
+      "export function useStaticValue<T = any>(${0:generateValue}: () => T): T {",
+      "  const ref = useRef<T>(null);",
+      "",
+      "  if (!ref.current) {",
+      "    ref.current = ${1:generateValue}();",
+      "  }",
+      "",
+      "  return ref.current;",
+      "}"
+
+    ],
+    "description": "Hook to return a static value by Jonas Treub."
+  },
+  "useState": {
+    "prefix": "xus",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
+    ],
+    "description": [
+      "Returns a stateful value, and a function to update it.\n",
+      "During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).\n",
+      "The setState function is used to update the state. It accepts a new state value and enqueues a re-render of the component."
+    ]
+  },
+  "useEffect": {
+    "prefix": "xue",
+    "body": [
+      "useEffect(() => {",
+      "  return () => {",
+      "    ${1:effect}",
+      "  };",
+      "}, [${2:input}])"
+    ],
+    "description": [
+      "Accepts a function that contains imperative, possibly effectful code.\n",
+      "Mutations, subscriptions, timers, logging, and other side effects are not allowed inside the main body of a function component (referred to as React’s render phase). Doing so will lead to confusing bugs and inconsistencies in the UI.\n",
+      "Instead, use useEffect. The function passed to useEffect will run after the render is committed to the screen. Think of effects as an escape hatch from React’s purely functional world into the imperative world.\n",
+      "By default, effects run after every completed render, but you can choose to fire it only when certain values have changed."
+    ]
+  },
+  "useContext": {
+    "prefix": "xuc",
+    "body": ["const ${1:context} = useContext(${2:contextValue})"],
+    "description": [
+      "Accepts a context object (the value returned from React.createContext) and returns the current context value for that context. The current context value is determined by the value prop of the nearest <MyContext.Provider> above the calling component in the tree.\n",
+      "When the nearest <MyContext.Provider> above the component updates, this Hook will trigger a rerender with the latest context value passed to that MyContext provider."
+    ]
+  },
+  "useReducer": {
+    "prefix": "xur",
+    "body": [
+      "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})"
+    ],
+    "description": [
+      "An alternative to useState. Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method. (If you’re familiar with Redux, you already know how this works.)\n",
+      "useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks."
+    ]
+  },
+  "useCallback": {
+    "prefix": "xucb",
+    "body": [
+      "const memoizedCallback = useCallback(",
+      "  () => {",
+      "    ${1:callback}",
+      "  },",
+      "  [${2:input}],",
+      ")"
+    ],
+    "description": [
+      "Returns a memoized callback.\n",
+      "Pass an inline callback and an array of dependencies. useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders (e.g. shouldComponentUpdate)."
+    ]
+  },
+  "useMemo": {
+    "prefix": "xum",
+    "body": ["const memoizedValue = useMemo(() => ${1:function}, ${2:input})"],
+    "description": [
+      "Returns a memoized value.\n",
+      "Pass a “create” function and an array of dependencies. useMemo will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.\n",
+      "Remember that the function passed to useMemo runs during rendering. Don’t do anything there that you wouldn’t normally do while rendering. For example, side effects belong in useEffect, not useMemo.\n",
+      "If no array is provided, a new value will be computed on every render."
+    ]
+  },
+  "useRef": {
+    "prefix": "xuref",
+    "body": ["const ${1:ref} = useRef(${2:initialValue})"],
+    "description": "useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component."
+  },
+  "useImperativeHandle": {
+    "prefix": "xuih",
+    "body": [
+      "useImperativeHandle(",
+      "  ${1:ref},",
+      "  () => {",
+      "    ${2:handler}",
+      "  },",
+      "  [${3:input}],",
+      ")"
+    ],
+    "description": "Customizes the instance value that is exposed to parent components when using ref. As always, imperative code using refs should be avoided in most cases."
+  },
+  "useLayoutEffect": {
+    "prefix": "xule",
+    "body": [
+      "useLayoutEffect(() => {",
+      "  return () => {",
+      "    ${1:effect}",
+      "  },",
+      "  [${2:input}]",
+      "})"
+    ],
+    "description": [
+      "The signature is identical to useEffect, but it fires synchronously after all DOM mutations.\n",
+      "Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint."
+    ]
+  },
+  "useDebugValue": {
+    "prefix": "xudv",
+    "body": ["useDebugValue(${1:value})"],
+    "description": "Can be used to display a label for custom hooks in React DevTools."
+  },
+  "Random Color": {
+    "prefix": "xrc",
+    "body": [
+      "function randomColor() {",
+      "    return '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);",
+      "}"
+    ],
+    "description": "Random color function by Emil Widlund"
   }
 }
