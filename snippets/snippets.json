@@ -1,19 +1,33 @@
 {
-  "Framer X Code Component": {
+  "Framer X: Component Class": {
     "prefix": "xcc",
     "body": [
       "import * as React from 'react'",
       "import { PropertyControls, ControlType } from 'framer'",
       "",
-      "const style:React.CSSProperties={height:'50%',display:'flex',alignItems:'center',justifyContent:'flex-start',textAlign:'center',paddingLeft:24,fontFamily:'-apple-system, BlinkMacSystemFont',fontStyle:'normal',fontWeight:300,fontSize:'1.5rem',color:'#000000',background:'rgba(136, 85, 255, 0.1)',borderBottom:'1px solid #8855FF',overflow:'hidden'}",
-      "",
-      "",
-      "// Define type of property",
-      "interface Props {",
-      "  text: string;",
+      "const style: React.CSSProperties = {",
+      "  height: '100%',",
+      "  display: 'flex',",
+      "  alignItems: 'center',",
+      "  justifyContent: 'flex-start',",
+      "  textAlign: 'center',",
+      "  paddingLeft: 24,",
+      "  fontFamily: '-apple-system, BlinkMacSystemFont',",
+      "  fontStyle: 'normal',",
+      "  fontWeight: 300,",
+      "  fontSize: '1.5rem',",
+      "  color: '#000000',",
+      "  background: 'rgba(136, 85, 255, 0.1)',",
+      "  borderBottom: '1px solid #8855FF',",
+      "  overflow: 'hidden'",
       "}",
       "",
-      "export class ${1:ClassName} extends React.Component<Props> {",
+      "// Define type of property",
+      "type Props = {",
+      "  text: string",
+      "}",
+      "",
+      "export class ClassName extends React.Component<Props> {",
       "  // Set default properties",
       "  static defaultProps = {",
       "    text: 'Hello World!'",
@@ -27,100 +41,146 @@
       "  render() {",
       "    return <div style={style}>{this.props.text}</div>",
       "  }",
-      "}"
+      "}",
+      ""
     ],
-    "description": "This is the default React Code component created by Framer X. In Framer X, code components make use of JSX, an HTML-like markup language. Below you’ll find a very basic example of a React component. Notice how the render() method returns something very close to plain HTML and CSS."
+
+    "description": "Outdated pattern: This is a React Class Component created on Framer X. In Framer X, code components make use of JSX, an HTML-like markup language. Below you’ll find a very basic example of a React component. Notice how the render() method returns something very close to plain HTML and CSS."
   },
-  "Import Frame": {
-    "prefix": "xif",
+  "Framer X: Function Component": {
+    "prefix": "xfc",
+    "body": [
+      "import * as React from \"react\"",
+      "import { Frame, addPropertyControls, ControlType, useCycle } from \"framer\"",
+      "",
+      "// Open Preview (CMD + P)",
+      "// API Reference: https://www.framer.com/api",
+      "// ES6-React Reference: http://bit.ly/framer-react",
+      "",
+      "type ${1:FunctionComponent}Props = {",
+      "    text: string",
+      "}",
+      "",
+      "export function ${1:FunctionComponent}(props: ${1:FunctionComponent}Props) {",
+      "    const [twist, cycle] = useCycle(",
+      "        { scale: 0.5, rotate: 0 },",
+      "        { scale: 1, rotate: 90 }",
+      "    )",
+      "",
+      "    return (",
+      "        <Frame animate={twist} onTap={() => cycle()} size={\"100%\"}>",
+      "            {props.text}",
+      "        </Frame>",
+      "    )",
+      "}",
+      "",
+      "${1:FunctionComponent}.defaultProps = {",
+      "    text: \"Example from VS Code\",",
+      "}",
+      "",
+      "addPropertyControls(${1:FunctionComponent}, {",
+      "    text: {",
+      "        type: ControlType.String,",
+      "        defaultValue: ${1:FunctionComponent}.defaultProps.text,",
+      "        placeholder: \"Type something…\",",
+      "    },",
+      "})",
+      ""
+    ],
+    "description": "Framer X: Functional Component"
+  },
+  "Framer X: Import Frame": {
+    "prefix": "xframe",
     "body": ["import { Frame } from 'framer'"],
     "description": ""
   },
-  "Import Property Controls": {
-    "prefix": "xipc",
-    "body": ["import { PropertyControls, ControlType } from 'framer'"],
+  "Framer X: Import Property Controls": {
+    "prefix": "xproperty",
+    "body": ["import { addPropertyControls, ControlType } from 'framer'"],
     "description": ""
   },
-  "Property Controls": {
-    "prefix": "xpc",
-    "body": ["static propertyControls: PropertyControls = {", "  $0", "}"],
-    "description": ""
+  "Framer X: Add Property Control": {
+    "prefix": "xcontrols",
+    "body": ["addPropertyControls(${1:Component}, {", "    ${2:}", "})", ""],
+    "description": "Framer X Add Property Control"
   },
-  "Property Control Type Array": {
-    "prefix": "xcta",
+  "Framer X: Control Type Array": {
+    "prefix": "xarray",
     "body": [
-      "${0:children}: {",
+      "${1:MyArray}: {",
       "  type: ControlType.Array,",
-      "  propertyControl: {type: },",
-      "  title: ${2:'Children'}",
-      "}, "
+      "  propertyControl: {",
+      "    type: ${2:}",
+      "  }",
+      "}"
     ],
-    "description": "Array controls allows multiple values per ControlType, provided as an array via properties."
+    "description": "Framer X: Control Type Array"
   },
-  "Property Control Type String": {
-    "prefix": "xcts",
+  "Framer X: Control Type String": {
+    "prefix": "xstring",
     "body": [
-      "${0:string}: {",
+      "${1:my_string}: {",
       "  type: ControlType.String,",
-      "  defaultValue: '${1:Default Value}',",
-      "  title: '{$2:String}',",
-      "  placeholder: '{$3:Insert string value}'",
-      "}, "
+      "  title: ${2:'My String'},",
+      "  defaultValue: ${3:'Hello'},",
+      "  placeholder: 'Type something…',",
+      "},"
     ],
     "description": "String controls are displayed using a single line input field. A placeholder value can be set when needed."
   },
-  "Property Control Type Color": {
-    "prefix": "xctc",
+  "Framer X: Control Type Color": {
+    "prefix": "xcolor",
     "body": [
-      "${0:color}: {",
+      "${1:my_color}: {",
       "  type: ControlType.Color,",
-      "  title: '${1:Color}'",
-      "}, "
+      "  defaultValue: '#05f',",
+      "  title: '${2:'My Color'}'",
+      "},"
     ],
     "description": "Color controls are displayed using a color picker popover and a number input for the alpha."
   },
-  "Property Control Type ComponentInstance": {
-    "prefix": "xctci",
+  "Framer X: Control Type Component Instance": {
+    "prefix": "xcomponent",
     "body": [
-      "${0:children}: {",
+      "${1:my_components}: {",
       "  type: ControlType.ComponentInstance,",
-      "  title: '${1:Children}'",
-      "}, "
+      "  title: '${2:'My Component Instance'}'",
+      "},"
     ],
     "description": "ComponentInstance controls references to another components on the canvas, provided via a property."
   },
   "Property Control Type Image": {
-    "prefix": "xcti",
+    "prefix": "ximage",
     "body": [
-      "${0:image}: {",
+      "${1:my_image}: {",
       "  type: ControlType.Image,",
-      "  title: '${1:Image}'",
+      "  title: '${2:'My Image'}'",
       "}, "
     ],
     "description": "Image controls are displayed using an image picker that shows a small preview. The component receives an absolute URL during rendering."
   },
   "Property Control Type Number": {
-    "prefix": "xctn",
+    "prefix": "xnumber",
     "body": [
-      "${0:number}: {",
+      "${1:my_number}: {",
       "  type: ControlType.Number,",
-      "  title: ${2:'Number'},",
-      "  defaultValue: ${1:42},",
-      "  min: ${3:0},",
-      "  max: ${4:100},",
+      "  title: ${2:'My Number'},",
+      "  defaultValue: ${3:42},",
+      "  min: ${4:0},",
+      "  max: ${5:100},",
       "  unit: ${6:'px'},",
-      "  step: ${5:1},",
+      "  step: ${7:1},",
       "  displayStepper: false",
       "}, "
     ],
     "description": "Number controls are displayed using an input field and a slider. The min and max values can be specified to constraint the output. The default step size is 1. When a step size smaller then 1 is entered, the output will be floats. When the unit type is set to %, the input field will display 10 as 10%."
   },
   "Property Control Type Fused Number": {
-    "prefix": "xctfn",
+    "prefix": "xfusednum",
     "body": [
-      "${0:fusedNumber}: {",
+      "${1:my_fused_number}: {",
       "  type: ControlType.FusedNumber,",
-      "  title: '$1',",
+      "  title: {$2: 'My Fused Number'},",
       "  toggleKey: '$2',",
       "  toggleTitles: ['All Options', 'Each Option'],",
       "  valueKeys: ['Top', 'Right', 'Bottom', 'Left'],",
@@ -128,94 +188,94 @@
       "  min: ${3:1}",
       "}, "
     ],
-    "description": ""
+    "description": "Fused number property controls can be used to take a single number or four distinct numeric input fields."
   },
   "Property Control Type Boolean": {
-    "prefix": "xctb",
+    "prefix": "xbool",
     "body": [
-      "${0:boolean}: {",
+      "${1:my_boolean}: {",
       "  type: ControlType.Boolean,",
-      "  title: '$1',",
-      "  enabledTitle: '$2',",
-      "  disabledTitle: '$3'",
+      "  title: ${2:'My Boolean'},",
+      "  enabledTitle: ${3:'Yes'},",
+      "  disabledTitle: ${4:'No'},",
       "}, "
     ],
     "description": "Booleans use a segmented control. The segment titles are True and False by default but these can be overridden using the enabledTitle and disabledTitle."
   },
   "Property Control Type Segmented Enum": {
-    "prefix": "xctse",
+    "prefix": "xsegenum",
     "body": [
-      "${0:segmentedEnum}: {",
+      "${1:my_segmentedEnum}: {",
       "  type: ControlType.SegmentedEnum,",
-      "  title: '$1'",
-      "  options: [$2, $3]",
-      "  optionTitles: [$4, $5]",
+      "  title: ${2: 'My Segmented Enum'},",
+      "  options: [${3}, ${4}]",
+      "  optionTitles: [${5}, ${6}]",
       "}, "
     ],
-    "description": "A segmented enum control is displayed using a segmented control. Since a segmented control has limited space this only works for a tiny set of string values."
+    "description": "Segmented enum controls are displayed using a segmented control. Since a segmented control has limited space this only works for a tiny set of string values."
   },
   "Property Control Type Enum": {
-    "prefix": "xcte",
+    "prefix": "xenum",
     "body": [
-      "${0:enum}: {",
+      "${1:my_enum}: {",
       "  type: ControlType.Enum,",
-      "  title: '$1',",
-      "  options: [$2, $3],",
-      "  optionTitles: [$4, $5]",
-      "}, ",
-      "$6"
+      "  title: ${2: 'My Enum'},",
+      "  options: [${3}, ${4}]",
+      "  optionTitles: [${5}, ${6}]",
+      "}, "
     ],
-    "description": "An enum control displays a pop-up button with a fixed set of string values. The optionTitles can be set to have nicely formatted values for in the UI."
+    "description": "Enum control displays a pop-up button with a fixed set of string values. The optionTitles can be set to have nicely formatted values for in the UI."
   },
   "Property Control Type File": {
-    "prefix": "xctf",
+    "prefix": "xfile",
     "body": [
-      "${0:file}: {",
+      "${1:my_file}: {",
       "  type: ControlType.File,",
-      "  title: '$1',",
-      "  allowedFileTypes: ['$2', '$3'],",
+      "  title: ${2: 'My File'},",
+      "  allowedFileTypes: [${3}, ${4}],",
       "}, "
     ],
     "description": "File controls are displayed using a file picker that shows the file name after selecting a file. The component receives an absolute URL during rendering. The allowedFileTypes is an array containing all allowed file types, like so: ['json', 'obj', 'collada']."
   },
-  "Hide Control Types Pattern": {
-    "prefix": "xcpct",
+  "Framer X: Conditionally Rendering for Control Types ": {
+    "prefix": "xhideprop",
     "body": [
       "import * as React from 'react'",
-      "import { PropertyControls, ControlType } from 'framer'",
+      "import { Frame, addPropertyControls, ControlType } from 'framer'",
       "",
-      "const style:React.CSSProperties={height:'50%',display:'flex',alignItems:'center',justifyContent:'flex-start',textAlign:'center',paddingLeft:24,fontFamily:'-apple-system, BlinkMacSystemFont',fontStyle:'normal',fontWeight:300,fontSize:'1.5rem',color:'#000000',background:'rgba(136, 85, 255, 0.1)',borderBottom:'1px solid #8855FF',overflow:'hidden'}",
+      "// Open Preview (CMD + P)",
+      "// API Reference: https://www.framer.com/api",
       "",
-      "interface Props {",
-      "  isEnabled: boolean",
-      "  isActive: boolean",
+      "type FunctionComponentProps = {",
+      "  text: string",
       "}",
-      "export class ${1:ClassName} extends React.Component<Props> {",
-      "  static defaultProps: Props = {",
-      "    isEnabled: false,",
-      "    isActive: false",
-      "  }",
-      "  static propertyControls: PropertyControls = {",
-      "    isEnabled: { type: ControlType.Boolean },",
-      "    isActive: {",
-      "      type: ControlType.Boolean,",
-      "      hidden(props) {",
-      "        return props.isEnabled === false",
-      "      }",
+      "",
+      "export function FunctionComponent(props: FunctionComponentProps) {",
+      "  return <Frame size={'100%'}>{props.text}</Frame>",
+      "}",
+      "",
+      "FunctionComponent.defaultProps = {",
+      "  text: 'Example from VS Code',",
+      "  toggle: true",
+      "}",
+      "",
+      "addPropertyControls(FunctionComponent, {",
+      "  toggle: {",
+      "    type: ControlType.Boolean,",
+      "    title: 'Toggle',",
+      "    enabledTitle: 'Show',",
+      "    disabledTitle: 'Hide'",
+      "  },",
+      "  text: {",
+      "    type: ControlType.String,",
+      "    defaultValue: FunctionComponent.defaultProps.text,",
+      "    placeholder: 'Type something…',",
+      "    hidden(props) {",
+      "      return props.toggle === false",
       "    }",
       "  }",
-      "",
-      "  render() {",
-      "    let { isEnabled, isActive } = this.props",
-      "",
-      "    return (",
-      "      <>",
-      "        <div style={style}>{`Is enabled? ${isEnabled}`}</div>",
-      "        <div style={style}>{`Is active? ${isActive}`}</div>",
-      "      </>",
-      "    )",
-      "  }",
-      "}"
+      "})",
+      ""
     ],
     "description": "Property control types can be hidden by implementing the hidden function on the property description."
   },
@@ -307,7 +367,6 @@
       "",
       "  return ref.current;",
       "}"
-
     ],
     "description": "Hook to return a static value by Jonas Treub."
   },

@@ -19,25 +19,25 @@ In the command palette (`cmd-shift-p`), select `Install Extension` and type `Fra
 
 #### Framer X Snippets:
 
--   [x] Framer X Default Code Component
--   [x] Import Frame component
+-  Framer X Functional Component (Outdated pattern)
+-  Framer X Class Component (Outdated pattern)
+-  Import Frame component
 
 #### Framer X Property Controls:
 
--   [x] Property Control Static Method
--   [x] Control Type Boolean
--   [x] Control Type Number
--   [x] Control Type String
--   [x] Control Type Color
--   [x] Control Type Image
--   [x] Control Type File
--   [x] Control Type Enum
--   [x] Control Type SegmentedEnum
--   [x] Control Type FusedNumber
--   [x] Hide Control Types Pattern
--   [x] Control Type ComponentInstance
--   [x] Control Type Array
--   [ ] Control Type Object `internal`
+-  Property Control Static Method
+-  Control Type Boolean
+-  Control Type Number
+-  Control Type String
+-  Control Type Color
+-  Control Type Image
+-  Control Type File
+-  Control Type Enum
+-  Control Type SegmentedEnum
+-  Control Type FusedNumber
+-  Hide Control Types Pattern
+-  Control Type ComponentInstance
+-  Control Type Array
 
 #### Framer X Code Overrides:
 
@@ -70,39 +70,41 @@ The **⇥** means the `TAB →` key.
 
 ## Framer X Templates
 
-|  Prefix | Template                                                    |
-| ------: | ----------------------------------------------------------- |
-| `xcc ⇥` | "import { PropertyControls, ControlType } from 'framer'..." |
-| `xif ⇥` | "import { Frame } from 'framer'"                            |
+|        Prefix | Snippet                                                        |
+|-------------: |----------------------------------------------------------------|
+| `xproperty ⇥` | "import { addPropertyControls, ControlType } from 'framer'..." |
+| `xframe ⇥`    | "import { Frame } from 'framer'"                               |
+
 
 ## Framer X Property Controls
 
-|    Prefix | Method                                                   |
-| --------: | -------------------------------------------------------- |
-|  `xipc ⇥` | "import { PropertyControls, ControlType } from 'framer'" |
-|   `xpc ⇥` | "static propertyControls: PropertyControls = {}"         |
-|  `xcts ⇥` | "text: {type: ControlType.String, ...}"                  |
-|  `xcta ⇥` | "children: {type: ControlType.Array, ...}"               |
-|  `xctc ⇥` | "color: {type: ControlType.Color, ...}"                  |
-| `xctci ⇥` | "children: {type: ControlType.ComponentInstance, ...}"   |
-|  `xcti ⇥` | "image: {type: ControlType.Image, ...}"                  |
-|  `xctn ⇥` | "number: {type: ControlType.Number, ...}"                |
-| `xctfn ⇥` | "fusedNumber: {type: ControlType.FusedNumber, ...}"      |
-|  `xctb ⇥` | "boolean: {type: ControlType.Boolean, ...}"              |
-| `xctse ⇥` | "segment: {type: ControlType.SegmentedEnum, ...}"        |
-|  `xcte ⇥` | "enum: {type: ControlType.Enum, ...}"                    |
-|  `xctf ⇥` | "file: {type: ControlType.File, ...}"                    |
-| `xcpct ⇥` | "...hidden(props) {return props.isEnabled === false }"   |
+|         Prefix | Snippet                                                |
+|--------------: |--------------------------------------------------------|
+| `xcontrols ⇥`  | "static propertyControls: PropertyControls = {}"       |
+| `xstring ⇥`    | "text: {type: ControlType.String, ...}"                |
+| `xarray ⇥`     | "children: {type: ControlType.Array, ...}"             |
+| `xcolor ⇥`     | "color: {type: ControlType.Color, ...}"                |
+| `xcomponent ⇥` | "children: {type: ControlType.ComponentInstance, ...}" |
+| `ximage ⇥`     | "image: {type: ControlType.Image, ...}"                |
+| `xnumber ⇥`    | "number: {type: ControlType.Number, ...}"              |
+| `xfusednum ⇥`  | "fusedNumber: {type: ControlType.FusedNumber, ...}"    |
+| `xbool ⇥`      | "boolean: {type: ControlType.Boolean, ...}"            |
+| `xsegenum ⇥`   | "segment: {type: ControlType.SegmentedEnum, ...}"      |
+| `xenum ⇥`      | "enum: {type: ControlType.Enum, ...}"                  |
+| `xfile ⇥`      | "file: {type: ControlType.File, ...}"                  |
+| `xhideprop ⇥`  | "...hidden(props) {return props.toggle === false}"     |
+
+
 
 ## React
 
-|   Prefix | Method                                |
+|   Prefix | Snippet                                |
 | -------: | ------------------------------------- |
 | `ximp ⇥` | "import { ModuleName } from 'module'" |
 
 ### React Hooks
 
-|    Prefix | Method                   |
+|    Prefix | Snippet                   |
 | --------: | ------------------------ |
 |   `xus ⇥` | useState Hook            |
 |   `xue ⇥` | useEffect Hook           |
@@ -117,14 +119,14 @@ The **⇥** means the `TAB →` key.
 
 ### React Custom Hooks
 
-|   Prefix | Method              |
+|   Prefix | Snippet              |
 | -------: | ------------------- |
 |  `xui ⇥` | useIdentifier Hook  |
 | `xusv ⇥` | useStaticValue Hook |
 
 ## Utility Functions
 
-|  Prefix | Method                         |
+|  Prefix | Snippet                         |
 | ------: | ------------------------------ |
 | `xrc ⇥` | "function randomColor() {...}" |
 
@@ -141,6 +143,10 @@ New React Hooks snippets contains code samples from the following projects:
 
 -   [React Hooks Snippets for VS Code](https://github.com/antmdvs/vscode-react-hooks-snippets)
 -   [VSCode React Snippets](https://github.com/Wind4/vscode-react-snippets)
+
+New snippet prefixes inspired by Aroa Gil Bo, [Framer X Property Control Template & Snippets
+](https://marketplace.visualstudio.com/items?itemName=AroaGilBo.framer-property-control-snippets)
+
 
 ## Feedback & Contributions
 
