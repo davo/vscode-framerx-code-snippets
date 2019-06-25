@@ -15,7 +15,62 @@ In the command palette (`cmd-shift-p`), select `Install Extension` and type `Fra
 -   JavaScript React (.jsx)
 -   JavaScript (.js)
 
+# Snippets
+
+The **⇥** means the `TAB →` key.
+
+## Framer X Templates
+
+|        Prefix | Snippet                                                        |
+|-------------: |----------------------------------------------------------------|
+| `xproperty ⇥` | "import { addPropertyControls, ControlType } from 'framer'..." |
+| `xframe ⇥`    | "import { Frame } from 'framer'"                               |
+
+
+## Framer X Property Controls
+
+|         Prefix | Snippet                                                |
+|--------------: |--------------------------------------------------------|
+| `xcontrols ⇥`  | "static propertyControls: PropertyControls = {}"       |
+| `xstring ⇥`    | "text: {type: ControlType.String, ...}"                |
+| `xarray ⇥`     | "children: {type: ControlType.Array, ...}"             |
+| `xcolor ⇥`     | "color: {type: ControlType.Color, ...}"                |
+| `xcomponent ⇥` | "children: {type: ControlType.ComponentInstance, ...}" |
+| `ximage ⇥`     | "image: {type: ControlType.Image, ...}"                |
+| `xnumber ⇥`    | "number: {type: ControlType.Number, ...}"              |
+| `xfusednum ⇥`  | "fusedNumber: {type: ControlType.FusedNumber, ...}"    |
+| `xbool ⇥`      | "boolean: {type: ControlType.Boolean, ...}"            |
+| `xsegenum ⇥`   | "segment: {type: ControlType.SegmentedEnum, ...}"      |
+| `xenum ⇥`      | "enum: {type: ControlType.Enum, ...}"                  |
+| `xfile ⇥`      | "file: {type: ControlType.File, ...}"                  |
+| `xhideprop ⇥`  | "...hidden(props) {return props.toggle === false}"     |
+
+
+## React
+
+|   Prefix | Snippet                                |
+| -------: | ------------------------------------- |
+| `ximp ⇥` | "import { ModuleName } from 'module'" |
+
+### React Hooks
+
+|    Prefix | Snippet                   |
+| --------: | ------------------------ |
+|   `xus ⇥` | useState Hook            |
+|   `xue ⇥` | useEffect Hook           |
+|   `xuc ⇥` | useContext Hook          |
+|   `xur ⇥` | useReducer Hook          |
+|  `xucb ⇥` | useCallback Hook         |
+|   `xum ⇥` | useMemo Hook             |
+| `xuref ⇥` | useRef Hook              |
+|  `xuih ⇥` | useImperativeHandle Hook |
+|  `xule ⇥` | useLayoutEffect Hook     |
+|  `xudv ⇥` | useDebugValue Hook       |
+
+
 ## Snippet list
+
+
 
 #### Framer X Snippets:
 
@@ -63,59 +118,6 @@ In the command palette (`cmd-shift-p`), select `Install Extension` and type `Fra
 -   [ ] useViewportScrollValues
 
 ---
-
-# Snippets
-
-The **⇥** means the `TAB →` key.
-
-## Framer X Templates
-
-|        Prefix | Snippet                                                        |
-|-------------: |----------------------------------------------------------------|
-| `xproperty ⇥` | "import { addPropertyControls, ControlType } from 'framer'..." |
-| `xframe ⇥`    | "import { Frame } from 'framer'"                               |
-
-
-## Framer X Property Controls
-
-|         Prefix | Snippet                                                |
-|--------------: |--------------------------------------------------------|
-| `xcontrols ⇥`  | "static propertyControls: PropertyControls = {}"       |
-| `xstring ⇥`    | "text: {type: ControlType.String, ...}"                |
-| `xarray ⇥`     | "children: {type: ControlType.Array, ...}"             |
-| `xcolor ⇥`     | "color: {type: ControlType.Color, ...}"                |
-| `xcomponent ⇥` | "children: {type: ControlType.ComponentInstance, ...}" |
-| `ximage ⇥`     | "image: {type: ControlType.Image, ...}"                |
-| `xnumber ⇥`    | "number: {type: ControlType.Number, ...}"              |
-| `xfusednum ⇥`  | "fusedNumber: {type: ControlType.FusedNumber, ...}"    |
-| `xbool ⇥`      | "boolean: {type: ControlType.Boolean, ...}"            |
-| `xsegenum ⇥`   | "segment: {type: ControlType.SegmentedEnum, ...}"      |
-| `xenum ⇥`      | "enum: {type: ControlType.Enum, ...}"                  |
-| `xfile ⇥`      | "file: {type: ControlType.File, ...}"                  |
-| `xhideprop ⇥`  | "...hidden(props) {return props.toggle === false}"     |
-
-
-
-## React
-
-|   Prefix | Snippet                                |
-| -------: | ------------------------------------- |
-| `ximp ⇥` | "import { ModuleName } from 'module'" |
-
-### React Hooks
-
-|    Prefix | Snippet                   |
-| --------: | ------------------------ |
-|   `xus ⇥` | useState Hook            |
-|   `xue ⇥` | useEffect Hook           |
-|   `xuc ⇥` | useContext Hook          |
-|   `xur ⇥` | useReducer Hook          |
-|  `xucb ⇥` | useCallback Hook         |
-|   `xum ⇥` | useMemo Hook             |
-| `xuref ⇥` | useRef Hook              |
-|  `xuih ⇥` | useImperativeHandle Hook |
-|  `xule ⇥` | useLayoutEffect Hook     |
-|  `xudv ⇥` | useDebugValue Hook       |
 
 ### React Custom Hooks
 
