@@ -1,8 +1,11 @@
 # Framer X Code Snippets for VS Code
 
-This extension provides Framer X & React code snippets for TypeScript and ES6.
+[![Badge for version for Visual Studio Code extension pixelbeat.vscode-framerx-code-snippets](https://vsmarketplacebadge.apphb.com/version-short/pixelbeat.vscode-framerx-code-snippets.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=pixelbeat.vscode-framerx-code-snippets)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/pixelbeat.vscode-framerx-code-snippets.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=pixelbeat.vscode-framerx-code-snippets)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating-short/pixelbeat.vscode-framerx-code-snippets.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=pixelbeat.vscode-framerx-code-snippets)
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
 
-Here is a adirect link to the extension at the VS Code Marketplace [Framer X Code Snippets](https://marketplace.visualstudio.com/items?itemName=pixelbeat.vscode-framerx-code-snippets)
+This extension provides Framer X & React code snippets for TypeScript and ES6.
 
 ## Installation
 
