@@ -97,29 +97,6 @@ The **⇥** means the `TAB →` key.
 -  Control Type ComponentInstance
 -  Control Type Array
 
-#### Framer X Code Overrides:
-
--   [ ] Events Overrides
--   [ ] Animation Overrides
-
-#### Framer X Hooks:
-
--   [ ] useAnimation
--   [ ] useCache
--   [ ] useConstraints
--   [ ] useCycle
--   [ ] useExternalRef
--   [ ] useGestures
--   [ ] useMap
--   [ ] useMotionValue
--   [ ] usePanGesture
--   [ ] userAgent
--   [ ] userSelect
--   [ ] useSpring
--   [ ] useTapGesture
--   [ ] useTransformedValue
--   [ ] useViewportScrollValues
-
 ---
 
 ### React Custom Hooks
