@@ -382,15 +382,30 @@
       "The setState function is used to update the state. It accepts a new state value and enqueues a re-render of the component."
     ]
   },
+  "useLayoutEffect": {
+    "prefix": "xule",
+    "body": [
+      "useLayoutEffect(() => {",
+      "  ${1:effect}",
+      "  return () => {",
+      "    // Cleanup",
+      "  },",
+      "}, [${2:dependency}])"
+    ],
+    "description": [
+      "The signature is identical to useEffect, but it fires synchronously after all DOM mutations.\n",
+      "Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint."
+    ]
+  },
   "useEffect": {
     "prefix": "xue",
     "body": [
       "useEffect(() => {",
       "  ${1:effect}",
       "  return () => {",
-      "  // Cleanup",
-      "  };",
-      "}, [${2:input}])"
+      "    // Cleanup",
+      "  },",
+      "}, [${2:dependency}])"
     ],
     "description": [
       "Accepts a function that contains imperative, possibly effectful code.\n",
@@ -420,12 +435,7 @@
   "useCallback": {
     "prefix": "xucb",
     "body": [
-      "const memoizedCallback = useCallback(",
-      "  () => {",
-      "    ${1:callback}",
-      "  },",
-      "  [${2:input}],",
-      ")"
+      "const memoizedCallback = useCallback(() => { ${1:callback} }, [${2:dependency}])"
     ],
     "description": [
       "Returns a memoized callback.\n",
@@ -434,7 +444,7 @@
   },
   "useMemo": {
     "prefix": "xum",
-    "body": ["const memoizedValue = useMemo(() => ${1:function}, ${2:input})"],
+    "body": ["const memoizedValue = useMemo(() => ${1:operation}, [${2:dependency}])"],
     "description": [
       "Returns a memoized value.\n",
       "Pass a “create” function and an array of dependencies. useMemo will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.\n",
@@ -459,22 +469,6 @@
       ")"
     ],
     "description": "Customizes the instance value that is exposed to parent components when using ref. As always, imperative code using refs should be avoided in most cases."
-  },
-  "useLayoutEffect": {
-    "prefix": "xule",
-    "body": [
-      "useLayoutEffect(() => {",
-      "  ${1:effect}",
-      "  return () => {",
-      "  // Cleanup",
-      "  },",
-      "  [${2:input}],",
-      ")"
-    ],
-    "description": [
-      "The signature is identical to useEffect, but it fires synchronously after all DOM mutations.\n",
-      "Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint."
-    ]
   },
   "useDebugValue": {
     "prefix": "xudv",

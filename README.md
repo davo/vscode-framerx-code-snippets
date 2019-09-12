@@ -1,9 +1,11 @@
-# Framer X Code Snippets for VS Code
-
 [![Badge for version for Visual Studio Code extension pixelbeat.vscode-framerx-code-snippets](https://vsmarketplacebadge.apphb.com/version-short/pixelbeat.vscode-framerx-code-snippets.svg?color=blue&style=?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=pixelbeat.vscode-framerx-code-snippets)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/pixelbeat.vscode-framerx-code-snippets.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=pixelbeat.vscode-framerx-code-snippets)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/pixelbeat.vscode-framerx-code-snippets.svg?color=blue&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=pixelbeat.vscode-framerx-code-snippets)
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=blue&style=flat-square)](http://opensource.org/licenses/MIT)
+
+
+# Framer X Code Snippets for VS Code
+
 
 This extension provides Framer X & React code snippets for TypeScript and ES6.
 
@@ -13,10 +15,10 @@ In the command palette (`cmd-shift-p`), select `Install Extension` and type `Fra
 
 ## Supported languages (file extensions)
 
--   TypeScript React (.tsx)
--   TypeScript (.ts)
--   JavaScript React (.jsx)
--   JavaScript (.js)
+- TypeScript React (.tsx)
+- TypeScript (.ts)
+- JavaScript React (.jsx)
+- JavaScript (.js)
 
 # Snippets
 
@@ -116,15 +118,15 @@ The **⇥** means the `TAB →` key.
 
 To get the most of this extension I recommend also to install:
 
--   [ES7 React/Redux/React-Native/JS snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets), comes with more than +100 snippets.
--   [JavaScript Snippet Pack](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-javascript-snippet-pack), comes with a variety of useful snippets for debugging (cl ⇥ console.log) and traditional DOM manipulation methods.
+- [ES7 React/Redux/React-Native/JS snippets](https://github.com/dsznajder/vscode-es7-javascript-react-snippets), comes with more than +100 snippets.
+- [JavaScript Snippet Pack](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-javascript-snippet-pack), comes with a variety of useful snippets for debugging (cl ⇥ console.log) and traditional DOM manipulation methods.
 
 ## Credits
 
 New React Hooks snippets contains code samples from the following projects:
 
--   [React Hooks Snippets for VS Code](https://github.com/antmdvs/vscode-react-hooks-snippets)
--   [VSCode React Snippets](https://github.com/Wind4/vscode-react-snippets)
+- [React Hooks Snippets for VS Code](https://github.com/antmdvs/vscode-react-hooks-snippets)
+- [VSCode React Snippets](https://github.com/Wind4/vscode-react-snippets)
 
 New snippet prefixes inspired by Aroa Gil Bo, [Framer X Property Control Template & Snippets
 ](https://marketplace.visualstudio.com/items?itemName=AroaGilBo.framer-property-control-snippets)
